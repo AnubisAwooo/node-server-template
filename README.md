@@ -1,2 +1,2 @@
-# node-server-template
-node-server-template
+# node-service-template
+node-service-template
