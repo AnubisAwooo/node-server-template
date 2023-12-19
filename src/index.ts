@@ -1,16 +1,17 @@
 import express from 'express';
+import bodyParser from 'body-parser';
+import routes from './routes';
+import log from './common/logger';
 
-import { rootHandler } from './handlers/root';
-import { helloHandler } from './handlers/hello';
+var jsonParser = bodyParser.json();
 
 const app = express();
 const port = process.env.PORT || '8080';
 
-app.get('/', rootHandler);
-
-app.get('/hello', helloHandler);
-app.get('/hello/:name', helloHandler);
+app.use(jsonParser);
 
 app.listen(port, () => {
-    return console.log(`Server is listening on ${port}`);
+    log.info(`Server is listening on ${port}`);
+    routes(app);
+    return console.log(`\nServer is listening on ${port}\n`);
 });

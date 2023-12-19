@@ -1,0 +1,3 @@
+export const FAILED_CODE_SYSTEM_ERROR = 1;
+export const FAILED_CODE_WRONG_PARAMS = 2;
+export const FAILED_CODE_NOT_FOUND = 404;
